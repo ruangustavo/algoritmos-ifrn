@@ -1,0 +1,1 @@
+O código aloca dinamicamente uma matriz `Y x X` (2x2) de inteiros, preenche-a com a soma dos índices `(i + j)`, exibe os valores na tela e libera a memória alocada ao final.
