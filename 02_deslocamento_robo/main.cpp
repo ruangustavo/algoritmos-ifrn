@@ -5,8 +5,8 @@
 #include <iostream>
 using namespace std;
 
-#define ALTURA 20
-#define LARGURA 20
+#define ALTURA 3
+#define LARGURA 3
 
 void MoveEsquerda(int *x);
 void MoveDireita(int *x);
@@ -16,6 +16,7 @@ void ImprimeMapa(int px, int py);
 void LimiteTabuleiro(int *px, int *py);
 
 char movimento;
+bool deveMostrarCifrao = false;
 
 int main() {
     int px, py;
@@ -52,7 +53,10 @@ int main() {
                 MoveBaixo(&py);
                 movimento = 's';
                 break;
-
+            case 'm':
+            case 'M':
+                deveMostrarCifrao = !deveMostrarCifrao;
+                break;
             case 'q':
             case 'Q':
                 continua = 0;
@@ -74,7 +78,10 @@ void ImprimeMapa(int px, int py) {
     for (y = 0; y < ALTURA; y++) {
         for (x = 0; x < LARGURA; x++) {
             if (px == x && py == y) {
-                cout << " @ ";
+                if (deveMostrarCifrao)
+                    cout << " $ ";
+                else
+                    cout << " @ ";
             } else {
                 cout << " + ";
             }
