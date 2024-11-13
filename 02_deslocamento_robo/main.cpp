@@ -5,8 +5,8 @@
 #include <iostream>
 using namespace std;
 
-#define ALTURA 3
-#define LARGURA 3
+#define ALTURA 20
+#define LARGURA 20
 
 void MoveEsquerda(int *x);
 void MoveDireita(int *x);
@@ -29,7 +29,7 @@ int main() {
 
     ImprimeMapa(px, py);
     while (continua) {
-        ordem = getchar();
+        cin >> ordem;
         cin.ignore();
 
         switch (ordem) {
@@ -116,6 +116,6 @@ void MoveEsquerda(int *x) { *x = *x - 1; }
 
 void MoveDireita(int *x) { *x = *x + 1; }
 
-void MoveCima(int *y) { *y = *y + 1; }
+void MoveCima(int *y) { *y = *y - 1; }
 
-void MoveBaixo(int *y) { *y = *y - 1; }
+void MoveBaixo(int *y) { *y = *y + w 1; }
